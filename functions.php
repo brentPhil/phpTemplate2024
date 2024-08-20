@@ -1,11 +1,24 @@
 <?php
 
-function dd($value){
+function dd($value)
+{
     echo '<pre>';
     var_dump($value);
     echo '</pre>';
 
     die();
+}
+
+function assets($src, $default): string
+{
+    $root_path = '/' . basename(__DIR__);
+    return $src ? "$root_path/public/$src" : "$root_path/public/$default";
+}
+
+function root($src): string
+{
+    $root_path = '/' . basename(__DIR__);
+    return "$root_path/$src";
 }
 
 function getFormattedDate($dateString, $format = 'F j, Y, g:i a'): string
@@ -23,4 +36,8 @@ function urlIs($value): bool
 {
     return $_SERVER['REQUEST_URI'] === $value;
 }
-//dd($_SERVER);
+
+function authurize($condition, $status = Response::FORBIDDEN): void
+{
+    !$condition && abort(Response::FORBIDDEN);
+}

@@ -517,36 +517,35 @@ html {
 }
 
 :root {
-  color-scheme: light;
-  --b2: 93% 0 0;
-  --b3: 86% 0 0;
-  --in: 72.06% 0.191 231.6;
-  --su: 64.8% 0.150 160;
-  --wa: 84.71% 0.199 83.87;
-  --er: 71.76% 0.221 22.18;
-  --inc: 0% 0 0;
-  --suc: 0% 0 0;
-  --wac: 0% 0 0;
-  --erc: 0% 0 0;
+  --p: 73.4259% 0.134499 178.630486;
+  --b2: 92.1694% 0 0;
+  --b3: 85.2319% 0 0;
+  --bc: 19.8214% 0 0;
+  --pc: 14.6852% 0.0269 178.630486;
+  --sc: 13.6927% 0.03537 246.205898;
+  --ac: 90.0422% 0.034171 142.495339;
+  --nc: 83.9904% 0.008122 107.344816;
+  --inc: 15.487% 0.025782 239.60953;
+  --suc: 16.2188% 0.036527 160.277346;
+  --wac: 12.3711% 0.025373 84.473115;
+  --erc: 91.6118% 0.04673 21.39932;
   --rounded-box: 1rem;
   --rounded-btn: 0.5rem;
   --rounded-badge: 1.9rem;
+  --animation-btn: 0.25s;
+  --animation-input: .2s;
+  --btn-focus-scale: 0.95;
   --border-btn: 1px;
   --tab-border: 1px;
   --tab-radius: 0.5rem;
-  --p: 76.6626% 0.135433 153.450024;
-  --pc: 33.3872% 0.040618 162.240129;
-  --s: 61.3028% 0.202368 261.294233;
-  --sc: 100% 0 0;
-  --a: 72.7725% 0.149783 33.200363;
-  --ac: 0% 0 0;
-  --n: 35.5192% 0.032071 262.988584;
-  --nc: 98.4625% 0.001706 247.838921;
-  --b1: 100% 0 0;
-  --bc: 35.5192% 0.032071 262.988584;
-  --animation-btn: 0;
-  --animation-input: 0;
-  --btn-focus-scale: 1;
+  --s: 68.4633% 0.176851 246.205898;
+  --a: 50.211% 0.170855 142.495339;
+  --n: 19.952% 0.040611 107.344816;
+  --b1: 99.1069% 0 0;
+  --in: 77.4348% 0.12891 239.60953;
+  --su: 81.0938% 0.182635 160.277346;
+  --wa: 61.8556% 0.126866 84.473115;
+  --er: 58.0588% 0.23365 21.39932;
 }
 
 *, ::before, ::after {
@@ -1845,6 +1844,14 @@ html {
   font-size: 0.875rem;
 }
 
+.btn-md {
+  height: 3rem;
+  min-height: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 0.875rem;
+}
+
 .btn-square:where(.btn-xs) {
   height: 1.5rem;
   width: 1.5rem;
@@ -2056,10 +2063,6 @@ html {
   margin-top: 0.75rem;
 }
 
-.inline-block {
-  display: inline-block;
-}
-
 .flex {
   display: flex;
 }
@@ -2082,10 +2085,6 @@ html {
 
 .h-12 {
   height: 3rem;
-}
-
-.h-5 {
-  height: 1.25rem;
 }
 
 .h-fit {
@@ -2111,10 +2110,6 @@ html {
 
 .w-12 {
   width: 3rem;
-}
-
-.w-5 {
-  width: 1.25rem;
 }
 
 .w-52 {
@@ -2183,6 +2178,10 @@ html {
   overflow: hidden;
 }
 
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
 .text-nowrap {
   text-wrap: nowrap;
 }
@@ -2218,10 +2217,6 @@ html {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.stroke-current {
-  stroke: currentColor;
-}
-
 .p-0 {
   padding: 0px;
 }
@@ -2247,14 +2242,19 @@ html {
   padding-bottom: 1rem;
 }
 
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
-}
-
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
 }
 
 .font-bold {
@@ -2278,6 +2278,16 @@ html {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (min-width: 640px) {

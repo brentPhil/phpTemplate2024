@@ -1,8 +1,3 @@
-<?php require 'partials/heading.php' ?>
-<?php require 'partials/sidebar.php' ?>
-<?php require 'partials/nav.php' ?>
-<!--place the contents here-->
-
 <div class="card flex w-full bg-white rounded-md">
     <div class="card-body">
         <div class="flex justify-between">
@@ -29,7 +24,7 @@
                         <div class="flex items-center gap-3">
                             <div class="avatar">
                                 <div class="mask mask-squircle h-12 w-12">
-                                    <img src="https://img.daisyui.com/images/profile/demo/2@94.webp" alt="Avatar Tailwind CSS Component" />
+                                    <img src="<?= assets('', 'images/default.svg')?>" alt="Avatar Tailwind CSS Component" />
                                 </div>
                             </div>
                             <div>
@@ -40,7 +35,7 @@
                     </td>
                     <td><?= $farmer['sex'] ?></td>
                     <td><?= $farmer['contact_number'] ?></td>
-                    <td><?= $farmer['date_birth'] ?></td>
+                    <td><?= getFormattedDate($farmer['date_birth'], 'F j, Y') ?></td>
                     <td><?= $farmer['reference'] ?></td>
                     <td><?= $farmer['enrollment'] ?></td>
                     <td><?= getFormattedDate($farmer['created_at']) ?></td>
@@ -50,9 +45,6 @@
         </table>
     </div>
 </div>
-
-<!---->
-<?php require 'partials/footer.php' ?>
 <?php require 'modals/farmer_modal.php' ?>
 
 <script type="text/javascript">

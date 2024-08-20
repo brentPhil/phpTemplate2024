@@ -1,9 +1,4 @@
-<?php require 'partials/heading.php' ?>
-<?php require 'partials/sidebar.php' ?>
-<?php require 'partials/nav.php' ?>
-    <!--place the contents here-->
-
-    <div class="grid grid-cols-3 gap-4 w-full h-full">
+ <div class="grid grid-cols-3 gap-4 w-full h-full">
         <div class="card rounded-md bg-white">
             <div class="card-body">
                 <h2 class="card-title">Card title!</h2>
@@ -47,6 +42,3 @@
             </div>
         </div>
     </div>
-
-    <!---->
-<?php require 'partials/footer.php' ?>
