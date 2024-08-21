@@ -25,9 +25,18 @@ return [
     [
         'url' => root('crops'),
         'path' => 'controllers/crops.php',
-        'icon' => 'bi-file-earmark-person',
+        'icon' => 'bi-bucket',
         'label' => 'Crops',
         'onSidebar' => true,
     ],
+    [
+    'url' => root('land'),
+    'path' => 'controllers/land.php',
+    'icon' => 'bi-bucket',
+    'label' => 'Land',
+    'onSidebar' => true,
+],
 // Add more items here as needed
 ];
+
+

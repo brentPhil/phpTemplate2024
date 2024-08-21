@@ -16,9 +16,9 @@ foreach ($routesMenu as $item) {
 {
     http_response_code($code);
 
-    require "src/views/{$code}.php";
+    require view("{$code}.php");
 
     die();
 }
 
-require 'src/views/layout.php';
+require view('layout.php');

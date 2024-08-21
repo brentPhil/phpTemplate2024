@@ -1,3 +1,3 @@
 <?php
 
-require 'src/views/profile.view.php';
+require view('profile.view.php');

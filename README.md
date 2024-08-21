@@ -86,3 +86,59 @@ This will stop the script and return a `403 Forbidden` response if the user is n
 ---
 
 These examples demonstrate how to use the utility functions provided in this repository. Adjust them according to your project's specific needs.
+
+Here is a labeled version of the `Validator` class with use case examples for each method:
+
+### Class: `Validator`
+
+This class provides static methods for validating strings and email addresses.
+
+#### Method 1: `string($value, $min = 1, $max = INF): bool`
+
+**Purpose**:  
+Validates if the given string meets the minimum and maximum length requirements.
+
+**Parameters**:
+- `$value` (string): The string to validate.
+- `$min` (int, default = 1): The minimum allowed length of the string.
+- `$max` (int, default = `INF`): The maximum allowed length of the string.
+
+**Returns**:
+- `bool`: `true` if the string length is within the specified range, `false` otherwise.
+
+**Use Case Example**:
+```php
+$value = "Hello, World!";
+if (Validator::string($value, 5, 20)) {
+    echo "The string is valid!";
+} else {
+    echo "The string is not valid.";
+}
+// Output: The string is valid!
+```
+
+#### Method 2: `email($value): bool`
+
+**Purpose**:  
+Validates if the given string is a properly formatted email address.
+
+**Parameters**:
+- `$value` (string): The string to validate as an email address.
+
+**Returns**:
+- `bool`: `true` if the string is a valid email address, `false` otherwise.
+
+**Use Case Example**:
+```php
+$email = "example@example.com";
+if (Validator::email($email)) {
+    echo "The email is valid!";
+} else {
+    echo "The email is not valid.";
+}
+// Output: The email is valid!
+```
+
+### Summary
+- `string()`: Checks the length of a string.
+- `email()`: Checks if a string is a valid email address.

@@ -14,10 +14,14 @@
     <?php require 'partials/sidebar.php' ?>
     <div class="flex h-full w-full overflow-auto flex-col">
         <?php require 'partials/nav.php' ?>
+
         <main class="h-full bg-slate-300 p-3 w-full overflow-y-auto">
-            <?php array_key_exists($uri, $routes) ? require $routes[$uri] : abort(Response::NOT_FOUND);?>
+
+            <?php array_key_exists($uri, $routes) ? require base_path($routes[$uri]) : abort(Response::NOT_FOUND);?>
             <?php require 'partials/footer.php' ?>
+
         </main>
+
     </div>
 </div>
 
