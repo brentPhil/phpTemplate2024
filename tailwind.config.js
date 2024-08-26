@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import daisyui0 from "daisyui";
+
 module.exports = {
   content: ["./src/**/*.{html,js,php}"],
   theme: {
@@ -21,7 +23,7 @@ module.exports = {
 
           "info": "#5ec0ff",
 
-          "success": "#00e498",
+          "success": "#27DEBF",
 
           "warning": "#a97e00",
 
@@ -32,6 +34,6 @@ module.exports = {
   },
 
   plugins: [
-    require('daisyui'),
+    daisyui0,
   ],
 }

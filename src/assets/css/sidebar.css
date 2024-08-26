@@ -1,0 +1,10 @@
+.sidebar-collapsed #myAside {
+    width: 5rem; /* Adjust according to your needs */
+}
+.sidebar-collapsed #logo {
+    width: 2.5rem; /* Adjust according to your needs */
+}
+.sidebar-collapsed #title,
+.sidebar-collapsed .linkLabel {
+    display: none;
+}

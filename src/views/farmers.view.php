@@ -2,7 +2,7 @@
     <div class="card-body">
         <div class="flex justify-between">
             <h2 class="card-title">Farmers</h2>
-            <button class="btn btn-sm rounded-md"><i class="bi bi-file-earmark-plus-fill"></i>add</button>
+            <button class="btn btn-sm rounded-md"  onclick="add_farmer.showModal()"><i class="bi bi-file-earmark-plus-fill"></i>add</button>
         </div>
 
         <table id="farmersTable" class="table w-full">
@@ -15,6 +15,7 @@
                 <th>Reference</th>
                 <th>Enrollment</th>
                 <th>Created At</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -28,17 +29,31 @@
                                 </div>
                             </div>
                             <div>
-                                <div class="font-bold"><?= $farmer['surname'] . ', ' . $farmer['first_name'] . ' ' . $farmer['middle_name'] ?></div>
-                                <div class="text-sm opacity-50"><?= $farmer['municipality'] . ', ' . $farmer['province'] ?></div>
+                                <div class="font-bold">
+                                    <?= htmlspecialchars($farmer['surname'] . ', ' . $farmer['first_name'] . ' ' . $farmer['middle_name']) ?>
+                                </div>
+                                <div class="text-sm opacity-50">
+                                    <?= htmlspecialchars($farmer['municipality'] . ', ' . $farmer['province']) ?>
+                                </div>
                             </div>
                         </div>
                     </td>
-                    <td><?= $farmer['sex'] ?></td>
-                    <td><?= $farmer['contact_number'] ?></td>
+                    <td><?= htmlspecialchars($farmer['sex']) ?></td>
+                    <td><?= htmlspecialchars($farmer['contact_number']) ?></td>
                     <td><?= getFormattedDate($farmer['date_birth'], 'F j, Y') ?></td>
-                    <td><?= $farmer['reference'] ?></td>
-                    <td><?= $farmer['enrollment'] ?></td>
+                    <td><?= htmlspecialchars($farmer['reference']) ?></td>
+                    <td><?= htmlspecialchars($farmer['enrollment']) ?></td>
                     <td><?= getFormattedDate($farmer['created_at']) ?></td>
+                    <td>
+                        <form method="post">
+                            <label>
+                                <input type="hidden" value="<?= htmlspecialchars($farmer['id'])?>">
+                            </label>
+                            <button type="submit" class="btn btn-sm btn-error rounded-md">
+                                Delete
+                            </button>
+                        </form>
+                    </td>
                 </tr>
             <?php endforeach; ?>
             </tbody>
@@ -46,6 +61,7 @@
     </div>
 </div>
 <?php require 'modals/farmer_modal.php' ?>
+<?php require 'modals/farmer_add_modal.php' ?>
 
 <script type="text/javascript">
     $(document).ready(function() {

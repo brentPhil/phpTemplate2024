@@ -13,16 +13,26 @@
                     <img alt="Profile Photo" src="<?= assets('', 'images/default.svg')?>" />
                 </div>
             </div>
-            <ul tabindex="0" class="dropdown-content menu menu-sm z-[1] mt-3 w-52 rounded-md bg-base-100 p-2 shadow">
-                <li>
-                    <a class="justify-between">
-                        Profile
-                        <span class="badge">New</span>
-                    </a>
-                </li>
-                <li><a>Settings</a></li>
-                <li><a>Logout</a></li>
-            </ul>
+            <div tabindex="0" class="dropdown-content z-10 mt-3 w-52 rounded-md bg-base-100 p-2 shadow">
+                <ul class="menu menu-md p-0 py-1">
+                    <li>
+                        <a class="justify-between" href="<?= root('profile')?>">
+                            Profile
+                        </a>
+                    </li>
+
+                    <li><a>Settings</a></li>
+                </ul>
+
+                <!--logout-->
+                <form method="POST" class="w-full" action="<?= root('session')?>">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="rounded-md btn btn-sm w-full">
+                        Logout
+                    </button>
+                </form>
+            </div>
+
         </div>
     </div>
 </div>

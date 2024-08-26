@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'Core' => [
+    'database' => [
         'host' => 'localhost',
         'port' => 3306,
         'dbname' => 'agriculture',

@@ -1,5 +1,9 @@
 <?php
 
+use Core\Response;
+use JetBrains\PhpStorm\NoReturn;
+
+
 function dd($value)
 {
     echo '<pre>';
@@ -8,13 +12,23 @@ function dd($value)
 
     die();
 }
+//--------------------- Specific Path helper functions --------------------//
 
-function view($path): string
+//Build Absolute Path to Root Directory
+
+function base_path($path): string
 {
-    return base_path('src/views/' . $path);
+    $root_path = str_replace('\\', '/', BASE_PATH);
+    return $root_path . $path;
 }
 
-function assets($src, $default): string
+function view($path, $attributes = []): void
+{
+    extract($attributes);
+    require base_path('src/views/' . $path);
+}
+
+function assets($src, $default = []): string
 {
     $root_path = '/' . basename(__DIR__);
     return $src ? "$root_path/public/$src" : "$root_path/public/$default";
@@ -25,6 +39,7 @@ function root($src): string
     $root_path = '/' . basename(__DIR__);
     return "$root_path/$src";
 }
+
 function getFormattedDate($dateString, $format = 'F j, Y, g:i a'): string
 {
     try {
@@ -41,7 +56,22 @@ function urlIs($value): bool
     return $_SERVER['REQUEST_URI'] === $value;
 }
 
-function authurize($condition, $status = Response::FORBIDDEN): void
+#[NoReturn] function redirect($path): void
 {
-    !$condition && abort(Response::FORBIDDEN);
+    header('Location:' . root($path));
+    exit();
+}
+
+function old($key, $default = null)
+{
+    // Return the old value from the session or the default value if not found
+    return \Core\Session::get('old')[$key] ?? $default;
+}
+
+//--------------------- UI functions--------------------//
+function displayMessage($field, $icon): string
+{
+    return !empty($field)
+        ? "<span class='text-error'><i class='{$icon}'></i> {$field}</span>"
+        : '';
 }

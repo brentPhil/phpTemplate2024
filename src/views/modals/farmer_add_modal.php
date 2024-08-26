@@ -1,17 +1,15 @@
-<dialog id="farmer" class="modal">
+<dialog id="add_farmer" class="modal">
     <div class="modal-box">
         <div class="flex items-center gap-3">
-            <div class="avatar">
-                <div class="mask mask-squircle h-12 w-12">
-                    <img src="<?= assets('', 'images/default.svg')?>" alt="Avatar Tailwind CSS Component" />
-                </div>
-            </div>
-            <div>
-                <div class="font-bold" id="fullname"></div>
-                <div class="text-sm opacity-50" id="address"></div>
+            <h3 class="text-lg font-bold">Add Farmer</h3>
+        </div>
+        <br>
+        <div class="modal-body">
+            <div class="form-control">
+                <span class="label-text">FULL NAME:</span>
+                <input type="text" placeholder="Input full name" class="input input-bordered input-success w-full max-w-xs" />
             </div>
         </div>
-        <span class="text-sm-center opacity-50" id="sex"></span>
         <div class="modal-action">
             <form method="dialog">
                 <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
@@ -25,7 +23,7 @@
 <script type="text/javascript">
     $(document).ready(function() {
         // Attach the click event to elements with a specific class or ID
-        $('.view-farmer').on('dblclick', function() {
+        $('.add-farmer').on('dblclick', function() {
             // Get the ID from the clicked element
             const itemId = $(this).attr('data-id');
             console.log(itemId)
@@ -38,7 +36,7 @@
                 success: function(response) {
                     // Loop through each key in the JSON response
                     $.each(response, function(key, value) {
-                        console.log(response);
+                        console.log(key);
                         farmer.showModal();
                         // Update the HTML element with the corresponding ID
                         // $('#' + key).val(value);  // For input elements
