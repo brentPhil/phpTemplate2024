@@ -67,11 +67,3 @@ function old($key, $default = null)
     // Return the old value from the session or the default value if not found
     return \Core\Session::get('old')[$key] ?? $default;
 }
-
-//--------------------- UI functions--------------------//
-function displayMessage($field, $icon): string
-{
-    return !empty($field)
-        ? "<span class='text-error'><i class='{$icon}'></i> {$field}</span>"
-        : '';
-}

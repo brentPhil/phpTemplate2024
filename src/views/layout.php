@@ -10,11 +10,13 @@
     <script src="<?= root('node_modules/jquery/dist/jquery.min.js')?>"></script>
     <!--    Sidebar   -->
     <link rel="stylesheet" type="text/css" href="<?= root('src/assets/css/sidebar.css')?>"/>
+    <script src="<?= root('src/assets/js/toastPlugin.js')?>"></script>
     <script src="<?= root('src/assets/js/sidebar.js')?>"></script>
+    <script src="<?= root('src/assets/js/FormSubmission.js')?>"></script>
 </head>
-<body>
+<body class="font-poppins">
 <div class="flex flex-row h-screen w-full">
-
+    <div id="toast-container"></div>
     <?php require 'partials/sidebar.php' ?>
 
     <div class="flex h-full w-full overflow-y-auto flex-col">

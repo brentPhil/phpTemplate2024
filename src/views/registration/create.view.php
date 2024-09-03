@@ -4,7 +4,7 @@
 view('/partials/heading.php',[
     'heading' => 'Register'
 ]) ?>
-<body>
+<body class="font-poppins">
 <div class="hero bg-base-200 min-h-screen">
     <div class="hero-content">
         <div class="card bg-base-100 w-full max-w-md min-w-[400px] shrink-0 rounded-md shadow-2xl">

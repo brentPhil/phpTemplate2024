@@ -66,7 +66,8 @@ class Router {
 
     public function previousUrl(): string
     {
-        return basename($_SERVER['HTTP_REFERER']);
+        $relativeUrl = basename(dirname($_SERVER['HTTP_REFERER'])) . '/' . basename($_SERVER['HTTP_REFERER']);
+        return str_replace('phpTemplate2024/', '', $relativeUrl);
     }
 
     #[NoReturn] protected function abort($code = 404): void

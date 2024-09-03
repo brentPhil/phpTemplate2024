@@ -25,7 +25,7 @@
                 </ul>
 
                 <!--logout-->
-                <form method="POST" class="w-full" action="<?= root('session')?>">
+                <form method="POST" class="w-full" action="<?= root('logout')?>">
                     <input type="hidden" name="_method" value="DELETE">
                     <button type="submit" class="rounded-md btn btn-sm w-full">
                         Logout

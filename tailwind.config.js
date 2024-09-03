@@ -4,7 +4,11 @@ import daisyui0 from "daisyui";
 module.exports = {
   content: ["./src/**/*.{html,js,php}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif']
+      }
+    },
   },
   daisyui: {
     themes: [
@@ -25,7 +29,7 @@ module.exports = {
 
           "success": "#27DEBF",
 
-          "warning": "#a97e00",
+          "warning": "#e5b100",
 
           "error": "#e40036",
         },

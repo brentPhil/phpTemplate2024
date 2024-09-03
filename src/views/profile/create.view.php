@@ -7,7 +7,7 @@
 
         <form class="grid gap-8 pt-16" action="<?= root('profile') ?>" method="post" enctype="multipart/form-data">
 
-            <?php view('imageUpload.component.php', ['admin' => $admin, 'errors' => \Core\Session::get('errors')]) ?>
+            <?php view('components/imageUpload.php', ['admin' => $admin, 'errors' => \Core\Session::get('errors')]) ?>
 
             <div class="space-y-3 w-full border-y-neutral">
                 <label class="input input-bordered <?= isset($errors["first_name"]) ? 'input-error' : '' ?> flex items-center gap-2">

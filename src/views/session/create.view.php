@@ -9,8 +9,9 @@ view('/partials/heading.php',[
         background-image: url(<?= assets('images/agri_bg_image.jpg')?>);
         background-repeat: no-repeat;
         background-size: cover;
-        ">
-<div class="hero backdrop-blur-md min-h-screen">
+        "
+      class="font-poppins">
+<div class="hero backdrop-blur-lg bg-neutral/50 min-h-screen">
     <div class="hero-content">
         <div class="card rounded-md border border-base-100 bg-base-100 w-[500px] shrink-0 shadow-2xl">
             <figure class="h-60">
@@ -24,10 +25,9 @@ view('/partials/heading.php',[
             </div>
             <form class="card-body flex z-10 flex-col gap-6" action="<?= root('login') ?>" method="post">
 
-
                 <div class="space-y-2">
 
-                    <label class="input input-bordered input-lg gap-3 <?= isset($errors["email"]) ? 'input-error' : '' ?> flex items-center">
+                    <label class="input input-bordered gap-3 <?= isset($errors["email"]) ? 'input-error' : '' ?> flex items-center">
 
                         <i class="bi bi-envelope-fill"></i>
                         <input
@@ -40,7 +40,7 @@ view('/partials/heading.php',[
                     </label>
                     <?= displayMessage($errors["email"] ?? '', 'bi bi-exclamation-diamond-fill')?>
 
-                    <label class="input input-bordered input-lg gap-3 <?= isset($errors["password"]) ? 'input-error' : '' ?> flex items-center">
+                    <label class="input input-bordered gap-3 <?= isset($errors["password"]) ? 'input-error' : '' ?> flex items-center">
 
                         <i class="bi bi-key-fill"></i>
                         <input
@@ -58,7 +58,7 @@ view('/partials/heading.php',[
                 <?= displayMessage($errors["exist"] ?? '', 'bi bi-exclamation-diamond-fill')?>
 
                 <div class="form-control w-full">
-                    <button type="submit" class="btn rounded-md btn-lg text-lg btn-primary">login</button>
+                    <button type="submit" class="btn rounded-md text-lg btn-accent">login</button>
                 </div>
             </form>
         </div>
